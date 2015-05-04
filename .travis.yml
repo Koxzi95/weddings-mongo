@@ -1,0 +1,26 @@
+os:
+- linux
+language: ruby
+install: bundle install --jobs=3 --retry=3
+rvm:
+- 2.2.0
+before_install:
+- sudo apt-get update
+- gem update --system
+- gem --version
+# before_script:
+# - bundle exec rake db:test:prepare
+
+services:
+  - mongodb
+
+# addons:
+#   code_climate:
+#     repo_token: dbff2f8dc258f57e456b6c1980bef3159ae268fe03291656251e140e91d0e6d6
+
+notifications:
+  email:
+    recipients:
+      - tom.jcox@icloud.com
+    on_success: change # default: change
+    on_failure: change # default: always
